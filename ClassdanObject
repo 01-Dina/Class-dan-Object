@@ -1,0 +1,56 @@
+//Membuat Class
+class Laptop{
+
+    //menetaptkan nilai awal pada property dengan method Constructor
+    // 'this' merujuk pada instance dari class Laptop
+    constructor(brand, type){
+        this.brand = brand;
+        this.type = type;
+        this.activeState = false; 
+    }
+
+    //Method untuk menyalakan Laptop
+    turnOn() {
+        console.log("Laptop dinyalakan");
+        this.activeState = true;
+    }
+
+    //Method untuk mematikan laptop
+    turnOff(){
+        console.log("Laptop dimatikan");
+        this.activeState = false;
+    }
+
+    //Method untuk memberikan info objek
+    infoLaptop(){
+        //Menggunakan Template Literals untuk menampilkan nilai Property
+        console.log(`Merk Laptop: ${this.brand}`);
+        console.log(`Tipe Laptop: ${this.type}`);
+        console.log(`Sedang aktif: ${this.activeState}`);
+    }
+
+}
+
+//Membuat instance dari class
+
+const laptopJohn = new Laptop("Asus", "VivoBook");
+
+//Menampilkan Object secara keseluruhan
+console.log(laptopJohn);
+
+//Menampilkan satu property object
+console.log(laptopJohn.brand);
+
+//Menjalankan Method dari class
+laptopJohn.infoLaptop();
+
+//Membuat instance object lainnya
+const laptopJane = new Laptop("Asus", "ROG");
+
+//Menyalakan laptop jane
+laptopJane.turnOn();
+
+laptopJane.infoLaptop();
+
+laptopJane.turnOff();
+console.log(laptopJane.activeState)
